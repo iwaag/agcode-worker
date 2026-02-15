@@ -1,0 +1,7 @@
+services:
+  agcode-worker:
+    build: .
+    ports:
+      - "11001:8000"
+    environment:
+      CLIENT_ID: ${CLIENT_ID}
