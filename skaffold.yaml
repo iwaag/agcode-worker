@@ -1,0 +1,12 @@
+apiVersion: skaffold/v4beta8
+kind: Config
+build:
+  artifacts:
+    - image: my-app
+      docker:
+        dockerfile: Dockerfile
+  local:
+    push: false
+manifests:
+  rawYaml:
+    - k8s/*.yaml
