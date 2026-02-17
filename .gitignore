@@ -13,3 +13,5 @@ venv/
 #tests are not ready yet
 tests/
 pytest.ini
+#private configs could contain sensitive data
+pi_config/

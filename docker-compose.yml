@@ -6,3 +6,4 @@ services:
     environment:
       PRODUCT_ENV: ${PRODUCT_ENV}
       CLIENT_ID: ${CLIENT_ID}
+      WORKSPACE_ROOT: ${WORKSPACE_ROOT}
