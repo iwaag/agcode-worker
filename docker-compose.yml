@@ -1,9 +1,29 @@
 services:
-  agcode-worker:
-    build: .
+  agcode-worker-dual:
+    image: iwaag/coder-pro:latest
+    build:
+      context: .
+      dockerfile: Dockerfile.dual
     ports:
       - "11001:8000"
     environment:
       PRODUCT_ENV: ${PRODUCT_ENV}
       CLIENT_ID: ${CLIENT_ID}
       WORKSPACE_ROOT: ${WORKSPACE_ROOT}
+      AGENT_TIER: "PRO"
+      AGENT_PROVIDER: ${AGENT_PROVIDER}
+      #CODEX_API_KEY: ${CODEX_API_KEY}
+
+  agcode-worker:
+    image: iwaag/coder-noob:latest
+    build: .
+    ports:
+      - "11002:8000"
+    environment:
+      PRODUCT_ENV: ${PRODUCT_ENV}
+      CLIENT_ID: ${CLIENT_ID}
+      WORKSPACE_ROOT: ${WORKSPACE_ROOT}
+      AGENT_TIER: "NOOB"
+      AGENT_PROVIDER: "LOCAL"
+      LOCAL_LLM_URL: ${LOCAL_LLM_URL}
+ 

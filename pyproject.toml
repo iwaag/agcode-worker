@@ -13,10 +13,16 @@ classifiers = [
 ]
 dependencies = [
     "fastapi",
-    "uvicorn",
+    "uvicorn[standard]",
+    "python-socketio",
     "gitpython",
+    "websockets",
+    "agpyutils @ git+https://github.com/iwaag/agpyutils.git@main",
 ]
 
 [build-system]
 requires = ["uv_build>=0.10.3,<0.11.0"]
 build-backend = "uv_build"
+
+[tool.uv]
+package = false
